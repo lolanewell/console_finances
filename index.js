@@ -1,5 +1,7 @@
+
+// ['Dec-2009', 0] either assume december is 0 or jan 2010 changes are 0 , 
+
 var finances = [
-['Dec-2009', 0] // either assume december is 0 or jan 2010 changes are 0 , 
 ['Jan-2010', 867884],
 ['Feb-2010', 984655], // changes  867884 - 984655
 ['Mar-2010', 322013],
@@ -87,3 +89,20 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099] // changes 6710996 - 138230
 ];
+
+var arrayLength = finances.length
+console.log(finances.length);
+
+// There are 86 months 
+
+var sum = 0
+
+for (var i = 0; i < finances.length; i++) {
+    sum += finances[i][1];
+} 
+console.log(sum)
+
+// The total is 38382578
+
+
+
