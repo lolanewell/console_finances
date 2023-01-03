@@ -193,7 +193,12 @@ var financeChanges = [
     ['Feb-2017', 671099] // changes 6710996 - 138230
     ];
 
+var profitLoss = []
 
 for (var i = 0; i < financeChanges[i][1]; i++) {
-    console.log(financeChanges[i+1][1] - financeChanges[i][1]);
+    profitLoss.push(financeChanges[i+1][1] - financeChanges[i][1]);
 } 
+console.log(profitLoss);
+
+
+
