@@ -195,10 +195,8 @@ var financeChanges = [
 
 var profitLoss = []
 
-for (var i = 0; i < financeChanges[i][1]; i++) {
+for (var i = 0; i < financeChanges.length-1; i++) {
     profitLoss.push(financeChanges[i+1][1] - financeChanges[i][1]);
 } 
 console.log(profitLoss);
-
-
 
