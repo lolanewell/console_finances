@@ -89,12 +89,11 @@ var finances = [
 ];
 
 // The total number of months included in the dataset:
-
 var arrayLength = finances.length
 
-console.log(finances.length);
-
+console.log("There are "+ finances.length + " months in this dataset.");
 // there are 86 months 
+
 
 
 // The net total amount of Profit/Losses over the entire period:
@@ -103,56 +102,43 @@ var sum = 0
 for (var i = 0; i < finances.length; i++) {
     sum += finances[i][1];
 } 
-console.log(sum)
-
+console.log("The total amount of profit/losses over the entire period is " + sum +".")
 // The total of all figures in the array is 38382578
 
 
+
 // The average of the **changes** in Profit/Losses over the entire period:
-
 // First created an array with the profit/loss difference figures between each year
-
-var profitLoss = []
+var profitLoss = [];
 
 for (var i = 0; i < finances.length-1; i++) {
     profitLoss.push(finances[i+1][1] - finances[i][1]);
 } 
-console.log(profitLoss);
-
-// Second 
-
-/* var sum2 = profitLoss.reduce((accumulator, value) => {
-    return accumulator + value;
-  }, 0);
-  
-  console.log(sum2); */
-
-  var sum2 = 0
-
+// Second created a for loop to calculate the sum of the profit/loss
+var sum2 = 0
   for (var i = 0; i < profitLoss.length; i++) {
     sum2 += profitLoss[i];
 } 
-console.log(sum)
-
 // sum of the profit/loss difference figures is -196785
 
-
+// Third calculated the average of the profit/loss array
 var avg = (sum2/profitLoss.length) || 0;
 
-console.log(Math.round(avg));
-
+console.log("The average of the profit/loss difference figures is " + Math.round(avg) +".");
 // average of the profit/loss difference figures is -2315 (rounded)
 
 
+
+// The greatest increase in profits (date and amount) over the entire period:
 var max = profitLoss.reduce((a, b) => Math.max(a, b));
-
-console.log(max);
-
 // the greatest increase in profits is 1926159
+// the date was Jan 2012
+console.log("The greatest increase in profits is " + max + " on the date " + finances[profitLoss.indexOf(max)+1][0] + ".");
 
 
+
+// The greatest decrease in losses (date and amount) over the entire period:
 var min = profitLoss.reduce((a, b) => Math.min(a, b));
-
-console.log(min);
-
 // the greatest decrease in profits is -2196167
+// the date was Aug 2013
+console.log("The greatest decrease in profits is " + min + " on the date " + finances[profitLoss.indexOf(min)+1][0] + ".");
